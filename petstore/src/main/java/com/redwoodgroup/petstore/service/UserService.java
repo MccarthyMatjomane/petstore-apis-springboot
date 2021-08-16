@@ -25,8 +25,12 @@ public ApiResponce createUser (User user){
     return responce;
 
 }
-public ApiResponce createUserWithList(User user){
-    users.add(user);
+public ApiResponce createUserWithList(List<User> userList){
+    User createduser = new User();
+    for (int i = 0; i < userList.size(); i++) {
+        createduser = userList.get(i);
+        users.add(createduser);
+    }
     ApiResponce responce = new ApiResponce();
     responce.setCode(200);
     responce.setMessage("User added successfully");
@@ -99,5 +103,5 @@ public User getUser(String username){
 
         return response;
     }
-    
+
 }
