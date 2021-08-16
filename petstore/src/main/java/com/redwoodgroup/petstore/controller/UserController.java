@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController("/User/")
 public class UserController {
@@ -20,8 +22,8 @@ public class UserController {
     //****************************
     @RequestMapping(value = "/user/createWithList",method = RequestMethod.POST)
     @ResponseBody
-    public ApiResponce createUserWithList(@Valid @RequestBody User user){
-        return userService.createUserWithList(user);
+    public ApiResponce createUserWithList(@Valid @RequestBody List<User> userList){
+        return userService.createUserWithList(userList);
     }
     //********************************
 
