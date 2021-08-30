@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
+    password: user1
+    url: jdbc:postgresql://localhost:5432/redwooddb?currentSchema=petstore
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
