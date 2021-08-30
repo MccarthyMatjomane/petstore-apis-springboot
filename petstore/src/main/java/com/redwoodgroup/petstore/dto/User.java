@@ -1,7 +1,6 @@
 package com.redwoodgroup.petstore.dto;
 
 public class User {
-   private int id;
    private String username;
    private String firstName;
    private String lastName;
@@ -10,20 +9,13 @@ public class User {
    private String phone;
    private int userStatus;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = 1234;
-    }
 
     public String getUsername() {
         return username;
     }
 
     public void setUsername(String username) {
-        this.username = "mccarthy";
+        this.username = username;
     }
 
     public String getFirstName() {
@@ -31,7 +23,7 @@ public class User {
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = "thaga";
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -39,7 +31,7 @@ public class User {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = "matjomane";
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -47,7 +39,7 @@ public class User {
     }
 
     public void setEmail(String email) {
-        this.email = "thagamccarthy@gmail.com";
+        this.email = email;
     }
 
     public String getPassword() {
@@ -55,7 +47,7 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = "12345";
+        this.password = password;
     }
 
     public String getPhone() {
@@ -63,7 +55,7 @@ public class User {
     }
 
     public void setPhone(String phone) {
-        this.phone = "0646603393";
+        this.phone = phone;
     }
 
     public int getUserStatus() {
@@ -77,8 +69,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
+                "username='" + username + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +

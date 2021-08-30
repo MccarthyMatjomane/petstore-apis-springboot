@@ -1,7 +1,9 @@
 package com.redwoodgroup.petstore.controller;
 
+import com.redwoodgroup.petstore.dbModels.UserEntity;
 import com.redwoodgroup.petstore.dto.User;
 import com.redwoodgroup.petstore.dto.ApiResponce;
+import com.redwoodgroup.petstore.repository.UserRepository;
 import com.redwoodgroup.petstore.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,8 +24,8 @@ public class UserController {
     //****************************
     @RequestMapping(value = "/user/createWithList",method = RequestMethod.POST)
     @ResponseBody
-    public ApiResponce createUserWithList(@Valid @RequestBody List<User> userList){
-        return userService.createUserWithList(userList);
+    public ApiResponce createUserWithList(@Valid @RequestBody List<User> userInfo){
+        return userService.createUserWithList(userInfo);
     }
     //********************************
 
@@ -35,7 +37,7 @@ public class UserController {
         return userService.getUser(username);
     }
     //***********************
-   @PutMapping(value = "/user/{username}")
+  @PutMapping(value = "/user/{username}")
     @ResponseBody
     public ApiResponce updateUser(@PathVariable("username") String username,User user){
         return userService.updateUser(username,user);
