@@ -88,7 +88,7 @@ public User getUser(String username){
         UserEntity userEntity = userRepository.findByUsername(username);
 
         try {
-            if (user.getFirstName().equalsIgnoreCase("string")){
+            if (user.getFirstName().equalsIgnoreCase("#")){
                 String fn = userEntity.getFirstName();
                 userEntity.setFirstName(fn);
             }
@@ -97,7 +97,7 @@ public User getUser(String username){
             }
 
 
-            if (user.getLastName().equalsIgnoreCase("string")){
+            if (user.getLastName().equalsIgnoreCase("#")){
                 String ln = userEntity.getLastName();
                 userEntity.setLastName(ln);
             }
@@ -105,7 +105,7 @@ public User getUser(String username){
                 userEntity.setLastName(user.getLastName());
             }
 
-            if (user.getPassword().equalsIgnoreCase("string")){
+            if (user.getPassword().equalsIgnoreCase("#")){
                 String psw = userEntity.getPassword();
                 userEntity.setPassword(psw);
             }
@@ -113,7 +113,7 @@ public User getUser(String username){
                 userEntity.setPassword(user.getPassword());
             }
 
-            if (user.getPhone().equalsIgnoreCase("string")){
+            if (user.getPhone().equalsIgnoreCase("#")){
                 String phn = userEntity.getPhone();
                 userEntity.setPhone(phn);
             }
@@ -121,7 +121,7 @@ public User getUser(String username){
                 userEntity.setPhone(user.getPhone());
             }
 
-            if (user.getEmail().equalsIgnoreCase("string")){
+            if (user.getEmail().equalsIgnoreCase("#")){
                 String eml = userEntity.getEmail();
                 userEntity.setEmail(eml);
             }
@@ -155,7 +155,7 @@ public User getUser(String username){
     public ApiResponce deleteUser(String username){
         ApiResponce response = new ApiResponce();
         try {
-            UserEntity userEntity = userRepository.deleteByUsername(username);
+            UserEntity userEntity = userRepository.findByUsername(username);
             userRepository.delete(userEntity);
             response.setCode(200);
             response.setMessage("deleted user successfully");
