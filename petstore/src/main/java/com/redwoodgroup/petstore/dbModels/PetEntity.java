@@ -4,6 +4,8 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
+
 @Entity
 @Table(name = "pet")
 public class PetEntity {
@@ -19,6 +21,11 @@ public class PetEntity {
     @ManyToOne()
     @JoinColumn(name = "user_id" )
     private UserEntity user;
+    @ManyToOne()
+    @JoinColumn(name = "type_id")
+    private TypeEntity type;
+    @OneToMany(mappedBy = "pet")
+    private List<VisitEntity> visit;
 
     public Integer getId() {
         return id;
@@ -66,5 +73,21 @@ public class PetEntity {
 
     public void setUser(UserEntity user) {
         this.user = user;
+    }
+
+    public TypeEntity getType() {
+        return type;
+    }
+
+    public void setType(TypeEntity type) {
+        this.type = type;
+    }
+
+    public List<VisitEntity> getVisit() {
+        return visit;
+    }
+
+    public void setVisit(List<VisitEntity> visit) {
+        this.visit = visit;
     }
 }
