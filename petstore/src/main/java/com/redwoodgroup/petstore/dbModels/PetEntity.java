@@ -4,6 +4,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -24,7 +25,7 @@ public class PetEntity {
     @ManyToOne()
     @JoinColumn(name = "type_id")
     private TypeEntity type;
-    @OneToMany(mappedBy = "pet")
+    @OneToMany(mappedBy = "pet",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<VisitEntity> visit;
 
     public Integer getId() {

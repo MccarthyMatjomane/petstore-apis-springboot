@@ -13,11 +13,8 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-private List<User> users = new ArrayList<>();
-
     public ApiResponce createUser (User user){
     ApiResponce responce = new ApiResponce();
-        users.add(user);
     try {
         UserEntity userentity = new UserEntity();
         userentity.setUsername(user.getUsername());
