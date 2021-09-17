@@ -1,15 +1,13 @@
 package com.redwoodgroup.petstore.controller;
 
-import com.redwoodgroup.petstore.dbModels.UserEntity;
+
 import com.redwoodgroup.petstore.dto.User;
 import com.redwoodgroup.petstore.dto.ApiResponce;
-import com.redwoodgroup.petstore.repository.UserRepository;
 import com.redwoodgroup.petstore.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController("/User/")

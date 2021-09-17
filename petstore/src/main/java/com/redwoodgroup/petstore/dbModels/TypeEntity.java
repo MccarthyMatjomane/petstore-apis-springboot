@@ -11,7 +11,7 @@ public class TypeEntity {
     @SequenceGenerator(name = "type_id_seq",sequenceName = "type_id_seq",allocationSize = 1)
     private Integer id;
     private String name;
-    @OneToMany(mappedBy = "type")
+    @OneToMany(mappedBy = "type",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<PetEntity> pet;
 
     public Integer getId() {

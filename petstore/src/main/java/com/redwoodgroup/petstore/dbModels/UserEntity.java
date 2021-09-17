@@ -21,7 +21,7 @@ public class UserEntity {
     private String password;
     private String phone;
     private int userStatus;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<PetEntity> pet;
     @CreationTimestamp
     private Timestamp createdAt;
